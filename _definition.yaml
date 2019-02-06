@@ -1,0 +1,27 @@
+ConnectorTitle: twitter
+AccessCodeServiceEndpoint: 
+AccessTokenServiceEndpoint: 
+ApiEndPoint: https://api.twitter.com/1.1
+UserName: hide
+UserPassword: hide
+ClientId: required
+ClientSecret: hide
+AccessCodeServiceUrl: hide
+AccessTokenServiceUrl: hide
+Personalized: !!bool true
+ApiKey: hide
+ServiceUrl: hide
+ServiceUrlHint: ''
+XML2JSON: hide
+ImpersonateOAuth: hide
+Interface: hide
+Custom1: required
+Custom1Label: Consumer API Secret Key
+Custom1Hint: ''
+Custom2: required
+Custom2Label: Tweet source accounts
+Custom3: required
+Custom2Hint: 'Comma-separated list of usernames e.g. "Cisco,ciscoDC"'
+Custom3Label: Tweet source hashtags
+Custom3Hint: 'Comma-separated list of hashtags e.g. "WeAreCisco,BeTheBridge"'
+Scopes:
