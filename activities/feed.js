@@ -1,8 +1,9 @@
 'use strict';
 
 const Autolinker = require('autolinker');
+const handleError = require('@adenin/cf-activity').handleError;
 const api = require('./common/api');
-const utils = require('./common/utils');
+const utils = require('./utils');
 
 const DEFAULT_PAGE_SIZE = 50;
 
@@ -25,11 +26,8 @@ module.exports = async (activity) => {
                 activity.Context.connector.custom3 = 'digitalworkplace';
             }
 
-            const accounts = 'from%3A' + activity.Context.connector.custom2
-                .replace(/,/g, '+OR+from%3A');
-
-            const hashtags = '%23' + activity.Context.connector.custom3
-                .replace(/,/g, '+OR+%23');
+            const accounts = 'from%3A' + activity.Context.connector.custom2.replace(/,/g, '+OR+from%3A');
+            const hashtags = '%23' + activity.Context.connector.custom3.replace(/,/g, '+OR+%23');
 
             configureRange();
 
@@ -92,7 +90,7 @@ module.exports = async (activity) => {
             };
         }
     } catch (error) {
-        utils.handleError(error, activity);
+        handleError(error, activity);
     }
 
     function configureRange() {
